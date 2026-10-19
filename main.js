@@ -43,17 +43,13 @@ function navigatePage() {
 }
 
 function removeLine() {
-  const el = document.getElementById("my-element");
+  const alertBox = document.getElementById("my-element");
+
+  alertBox.classList.remove("translate-x-[150%]");
+  alertBox.classList.add("translate-x-0");
+
   setTimeout(() => {
-    el.classList.add("right-10");
-
-    el.classList.remove("after:w-full");
-    el.classList.add("after:w-0");
-    setTimeout(() => {
-      el.classList.remove("right-10");
-
-      el.classList.add("after:w-full");
-      el.classList.remove("after:w-0");
-    }, 3500);
-  }, 100);
+    alertBox.classList.remove("translate-x-0");
+    alertBox.classList.add("translate-x-[150%]");
+  }, 3000);
 }

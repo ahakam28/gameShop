@@ -85,19 +85,15 @@ function validForm() {
 }
 
 function removeLine() {
-  const el = document.getElementById("my-element");
+  const alertBox = document.getElementById("my-element");
+
+  alertBox.classList.remove("translate-x-[150%]");
+  alertBox.classList.add("translate-x-0");
+
   setTimeout(() => {
-    el.classList.add("right-10");
-
-    el.classList.remove("after:w-full");
-    el.classList.add("after:w-0");
-    setTimeout(() => {
-      el.classList.remove("right-10");
-
-      el.classList.add("after:w-full");
-      el.classList.remove("after:w-0");
-    }, 3500);
-  }, 100);
+    alertBox.classList.remove("translate-x-0");
+    alertBox.classList.add("translate-x-[150%]");
+  }, 3000);
 }
 
 function purchaseGame() {
@@ -122,8 +118,7 @@ function purchaseGame() {
   addHistory("bg-warning", `You bought a game by ${price} tk at`);
 }
 
-
-function addHistory(bgColor, text){
+function addHistory(bgColor, text) {
   const div = document.createElement("div");
   div.className = `p-5 rounded-lg w-120 mx-auto text-white font-semibold mt-3 ${bgColor}`;
   div.innerText = `${text} ${new Date()}`;
