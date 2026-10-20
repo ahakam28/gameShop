@@ -19,12 +19,16 @@ historyBtn.addEventListener("click", function () {
   main.classList.add("hidden");
   addMoneyForm.classList.add("hidden");
   historyBox.classList.remove("hidden");
+  historyBtn.classList.add("btn-primary");
+  homeBtn.classList.remove("btn-primary");
 });
 
 homeBtn.addEventListener("click", function () {
   main.classList.remove("hidden");
   addMoneyForm.classList.add("hidden");
   historyBox.classList.add("hidden");
+  homeBtn.classList.add("btn-primary");
+  historyBtn.classList.remove("btn-primary");
 });
 
 addBtn.addEventListener("click", function () {
